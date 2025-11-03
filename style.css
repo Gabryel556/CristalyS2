@@ -1,0 +1,405 @@
+/* Importando uma fonte do Google Fonts que se assemelha à imagem */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Animação de brilho (agora controlada por variável) */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px var(--logo-glow-color, rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    box-shadow: 0 0 20px var(--logo-glow-color, rgba(255, 255, 255, 0.5));
+  }
+  100% {
+    box-shadow: 0 0 5px var(--logo-glow-color, rgba(255, 255, 255, 0.2));
+  }
+}
+
+/* --- TEMA ESCURO (Starry Night Azul - Padrão) --- */
+:root {
+    /* MODIFICADO: Mudei de 'background-color' para 'background' para suportar gradientes */
+    --bg-color: #101116; 
+    --sidebar-bg-color: rgba(16, 17, 22, 0.85); 
+    --main-content-bg: rgba(25, 26, 33, 0.8); 
+    --text-color: #e0e0e0;
+    --text-muted-color: #888da1;
+    --logo-color: #ffffff;
+    --logo-glow-color: #FFFFFF; 
+    --accent-color: #38bdf8; 
+    --active-link-bg: rgba(56, 189, 248, 0.2); 
+    --hover-bg-color: #2b2c37;
+
+    /* Variáveis do Starry Night (Tema Escuro) */
+    --spice-star: #FFFFFF;
+    --spice-star-glow: #FFFFFF;
+    --spice-shooting-star: #FFFFFF;
+    --spice-rgb-shooting-star-glow: 255, 255, 255;
+}
+
+/* --- MODIFICADO: TEMA CLARO (Starry Night Laranja) --- */
+body.light-theme {
+    /* MODIFICADO: Fundo agora é um gradiente vertical */
+    --bg-color: linear-gradient(180deg, #B0580B 0%, #2E1A0B 100%);
+    /* MODIFICADO: Barra lateral com tom marrom mais claro e transparente */
+    --sidebar-bg-color: rgba(46, 26, 11, 0.85); 
+    /* MODIFICADO: Conteúdo principal agora também é um gradiente transparente */
+    --main-content-bg: linear-gradient(180deg, rgba(176, 88, 11, 0.85) 0%, rgba(60, 35, 15, 0.8) 100%);
+    --text-color: #FFFFFF; 
+    --text-muted-color: #E0BFA4; 
+    --logo-color: #FFFFFF;
+    --logo-glow-color: #F07605; 
+    --accent-color: #F07605; 
+    --active-link-bg: rgba(240, 118, 5, 0.2); 
+    --hover-bg-color: #3B240E; 
+
+    /* Variáveis do Starry Night (Tema Claro/Laranja) */
+    --spice-star: #E0BFA4; 
+    --spice-star-glow: #F07605; 
+    --spice-shooting-star: #FFFFFF; 
+    --spice-rgb-shooting-star-glow: 240, 118, 5; 
+}
+
+/* --- Estilos Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    /* MODIFICADO: de 'background-color' para 'background' */
+    background: var(--sidebar-bg-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 1px solid #2f3241;
+    position: fixed;
+    z-index: 10; 
+    transition: background 0.3s;
+    
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--logo-color);
+    text-shadow: 0 0 5px var(--logo-glow-color), 
+                 0 0 10px var(--logo-glow-color), 
+                 0 0 15px var(--logo-glow-color);
+    cursor: pointer;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    animation: pulse-glow 3s infinite;
+}
+
+.profile-pic { 
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid var(--link-active-bg); 
+    flex-shrink: 0; 
+
+}
+
+.about-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+/* --- Navegação --- */
+.sidebar nav {
+    flex-grow: 1;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    color: var(--text-muted-color);
+    text-decoration: none;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+}
+
+.sidebar nav ul li a.active {
+    background-color: var(--active-link-bg);
+    color: #ffffff; 
+}
+
+.sidebar nav ul li a.active::after {
+    content: '>';
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--text-color);
+}
+
+/* --- Rodapé da Sidebar e Botão de Tema --- */
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.theme-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--hover-bg-color); 
+    border-radius: 8px;
+}
+
+body.light-theme .theme-switcher {
+    background-color: var(--hover-bg-color);
+}
+
+.theme-switcher p {
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+}
+
+.toggle-button {
+    background-color: var(--active-link-bg);
+    color: white;
+    padding: 6px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-button .fa-sun { display: none; }
+.toggle-button .fa-moon { display: block; }
+
+body.light-theme .toggle-button .fa-sun { display: block; }
+body.light-theme .toggle-button .fa-moon { display: none; }
+
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+    /* MODIFICADO: de 'background-color' para 'background' */
+    background: var(--main-content-bg);
+    z-index: 5; 
+    transition: background 0.3s;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+.main-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--hover-bg-color);
+    padding-bottom: 5px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    color: var(--text-muted-color);
+}
+
+/* --- O restante do CSS permanece o mesmo --- */
+
+.hidden {
+    display: none;
+}
+
+.about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+}
+
+.about-info {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; 
+    flex-wrap: wrap;
+}
+
+.about-profile-pic {
+    width: 250px; 
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--accent-color);
+    flex-shrink: 0; 
+}
+
+.about-text {
+    flex-grow: 1;
+    min-width: 300px; 
+}
+
+.about-text h3 {
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.embed-responsive-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.embed-responsive-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.spotify-container iframe {
+    margin-top: 1rem;
+    border-radius: 12px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted-color);
+    font-size: 2.2rem; 
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: -5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--hover-bg-color);
+    background-color: var(--sidebar-bg-color); 
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+    background-color: var(--sidebar-bg-color); 
+    border-color: var(--hover-bg-color); 
+}
+
+.contact-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 85%, black);
+}

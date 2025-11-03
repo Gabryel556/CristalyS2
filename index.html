@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - CristalyS2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="starrynight.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="starrynight-bg-container"></div>
+
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <h1 class="logo">CRISTALYS2</h1>
+        </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="active" data-target="inicio">Início</a></li>
+                <li><a href="#" data-target="sobre">Sobre mim</a></li>
+                <li><a href="#" data-target="novidades">Novidades</a></li>
+                
+                <li><a href="#" data-target="twitch">Twitch ao Vivo</a></li>
+                
+                <li><a href="#" data-target="galeria">Galeria de Artes</a></li>
+
+                <li><a href="#" data-target="avisos">Avisos</a></li>
+                <li><a href="#" data-target="regras">Regras</a></li>
+                <li><a href="#" data-target="calendario">Calendário</a></li>
+                <li><a href="#" data-target="eventos">Eventos</a></li>
+                <li><a href="#" data-target="discord">Discord</a></li>
+                <li><a href="#" data-target="loja">Loja</a></li>
+
+                <li><a href="#" data-target="contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <p>Mudar Tema</p>
+                <div class="toggle-button" id="theme-toggle">
+                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa="moon"></i>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section id="inicio" class="content-section">
+            <h2>Bem-vindo!</h2>
+            <p></p>
+        </section>
+
+        <section id="sobre" class="content-section hidden">
+            <h2>Sobre mim</h2>
+            <div class="about-layout">
+                <div class="about-info">
+                    <img src="Images/CrisSono.png" alt="Foto do Artista" class="about-profile-pic">
+                    <div class="about-text">
+                        <h3>Minha História</h3>
+                        <p>Bem vindo ao meu canal, pode me chamar de Crista ou Mudinha, faço live quase todos os dias e meu objetivo é ser sua amiga!</p>
+                        <p>A crista é muda? sim.</p><p>Porque ela é muda? crista tem dificuldade para falar, um grau de autismo que afeta a comunicação e muita vergonha. </p><p>Nasceu muda? não, eu sei falar mas não conseguiria nem se pagassem.</p><p> Ta sem mic? não, tem 1 bot de fala e geralmente o chat tem leitor.</p>
+                    </div>
+                </div>
+
+                <div class="spotify-container">
+                    <h3>Minha Playlist do Spotify</h3>
+                    <p>Dê play e curta as músicas que eu mais ouço durante as lives!</p>
+                    <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/playlist/6piyWhWAsJ9L558pnp361U?si=a612e363aab04549_source=generator" 
+                        width="30%" 
+                        height="380" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="novidades" class="content-section hidden">
+            <h2>Últimas Novidades</h2>
+            <p></p>
+        </section>
+
+        <section id="twitch" class="content-section hidden">
+            <h2>Twitch ao Vivo</h2>
+            <p></p>
+            <div class="embed-responsive-container">
+                <iframe
+                    src="https://player.twitch.tv/?channel=cristalys2&parent=SEU_DOMINIO.com"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    scrolling="no"
+                    height="100%"
+                    width="100%">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="galeria" class="content-section hidden">
+            <h2>Galeria de Artes e Fotos</h2>
+            <p>Uma coleção dos melhores momentos, artes da comunidade e fotos especiais.</p>
+            <div class="gallery-grid">
+                <img src="images/carecrista.jpg" alt="Descrição da imagem 1">
+                <img src="images/Chibi.png" alt="Descrição da imagem 2">
+                <img src="images/CrisFantasma.png" alt="Descrição da imagem 3">
+                <img src="images/CrisMaid.png" alt="Descrição da imagem 4">
+                <img src="images/CristaDuel.gif" alt="Descrição da imagem 5">
+                <img src="images/MajinCris.png" alt="Descrição da imagem 6">
+            </div>
+        </section>
+
+        <section id="contato" class="content-section hidden">
+            <h2>Contato e Redes Sociais</h2>
+            <p></p>
+            
+            <div class="social-links">
+                <a href="#" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <h3>Formulário de Sugestões</h3>
+            <form class="contact-form" action="https://formspree.io/f/SEU_ID_DO_FORMSPREE" method="POST">
+                <label for="name">Seu Nome:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="email">Seu Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="suggestion">Sua Sugestão de Conteúdo:</label>
+                <textarea id="suggestion" name="suggestion" rows="6" required></textarea>
+
+                <button type="submit">Enviar Sugestão</button>
+            </form>
+        </section>
+
+        <section id="avisos" class="content-section hidden">
+            <h2>Avisos Importantes</h2>
+            <p></p>
+        </section>
+
+        <section id="regras" class="content-section hidden">
+            <h2>Regras do Servidor</h2>
+            <p>Leia todas as regras para evitar punições.</p>
+        </section>
+
+        <section id="calendario" class="content-section hidden">
+            <h2>Calendário de Eventos</h2>
+            <p></p>
+        </section>
+
+        <section id="eventos" class="content-section hidden">
+            <h2>Eventos Ativos</h2>
+            <p></p>
+        </section>
+
+        <section id="discord" class="content-section hidden">
+            <h2>Comunidade no Discord</h2>
+            <p></p>
+        </section>
+
+        <section id="loja" class="content-section hidden">
+            <h2>Loja de Itens</h2>
+            <p></p>
+        </section>
+    </main>
+    
+    <script src="navigation.js"></script>
+    <script src="starrynight.js"></script>
+</body>
+</html>
