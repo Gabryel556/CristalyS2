@@ -1,7 +1,5 @@
-/* Importando uma fonte do Google Fonts que se assemelha à imagem */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-/* Animação de brilho (agora controlada por variável) */
 @keyframes pulse-glow {
   0% {
     box-shadow: 0 0 5px var(--logo-glow-color, rgba(255, 255, 255, 0.2));
@@ -14,9 +12,7 @@
   }
 }
 
-/* --- TEMA ESCURO (Starry Night Azul - Padrão) --- */
 :root {
-    /* MODIFICADO: Mudei de 'background-color' para 'background' para suportar gradientes */
     --bg-color: #101116; 
     --sidebar-bg-color: rgba(16, 17, 22, 0.85); 
     --main-content-bg: rgba(25, 26, 33, 0.8); 
@@ -27,21 +23,15 @@
     --accent-color: #38bdf8; 
     --active-link-bg: rgba(56, 189, 248, 0.2); 
     --hover-bg-color: #2b2c37;
-
-    /* Variáveis do Starry Night (Tema Escuro) */
     --spice-star: #FFFFFF;
     --spice-star-glow: #FFFFFF;
     --spice-shooting-star: #FFFFFF;
     --spice-rgb-shooting-star-glow: 255, 255, 255;
 }
 
-/* --- MODIFICADO: TEMA CLARO (Starry Night Laranja) --- */
 body.light-theme {
-    /* MODIFICADO: Fundo agora é um gradiente vertical */
     --bg-color: linear-gradient(180deg, #B0580B 0%, #2E1A0B 100%);
-    /* MODIFICADO: Barra lateral com tom marrom mais claro e transparente */
     --sidebar-bg-color: rgba(46, 26, 11, 0.85); 
-    /* MODIFICADO: Conteúdo principal agora também é um gradiente transparente */
     --main-content-bg: linear-gradient(180deg, rgba(176, 88, 11, 0.85) 0%, rgba(60, 35, 15, 0.8) 100%);
     --text-color: #FFFFFF; 
     --text-muted-color: #E0BFA4; 
@@ -50,15 +40,12 @@ body.light-theme {
     --accent-color: #F07605; 
     --active-link-bg: rgba(240, 118, 5, 0.2); 
     --hover-bg-color: #3B240E; 
-
-    /* Variáveis do Starry Night (Tema Claro/Laranja) */
     --spice-star: #E0BFA4; 
     --spice-star-glow: #F07605; 
     --spice-shooting-star: #FFFFFF; 
     --spice-rgb-shooting-star-glow: 240, 118, 5; 
 }
 
-/* --- Estilos Gerais --- */
 * {
     margin: 0;
     padding: 0;
@@ -72,11 +59,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Barra Lateral (Sidebar) --- */
 .sidebar {
     width: 260px;
     height: 100vh;
-    /* MODIFICADO: de 'background-color' para 'background' */
     background: var(--sidebar-bg-color);
     display: flex;
     flex-direction: column;
@@ -127,7 +112,6 @@ body {
     margin-top: 2rem;
 }
 
-/* --- Navegação --- */
 .sidebar nav {
     flex-grow: 1;
 }
@@ -166,7 +150,6 @@ body {
     color: var(--text-color);
 }
 
-/* --- Rodapé da Sidebar e Botão de Tema --- */
 .sidebar-footer {
     margin-top: auto;
 }
@@ -207,12 +190,10 @@ body.light-theme .toggle-button .fa-sun { display: block; }
 body.light-theme .toggle-button .fa-moon { display: none; }
 
 
-/* --- Conteúdo Principal --- */
 .main-content {
     margin-left: 260px;
     padding: 40px;
     width: calc(100% - 260px);
-    /* MODIFICADO: de 'background-color' para 'background' */
     background: var(--main-content-bg);
     z-index: 5; 
     transition: background 0.3s;
@@ -241,8 +222,6 @@ body.light-theme .toggle-button .fa-moon { display: none; }
     line-height: 1.6;
     color: var(--text-muted-color);
 }
-
-/* --- O restante do CSS permanece o mesmo --- */
 
 .hidden {
     display: none;

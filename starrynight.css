@@ -6,7 +6,6 @@
   width: 100%;
   top: 0;
   left: 0;
-  /* MODIFICADO: de 'background-color' para 'background' */
   background: var(--bg-color); 
 }
 
@@ -114,10 +113,6 @@
   }
 }
 
-/*
-Pure CSS Shooting Star Animation Effect Copyright (c) 2021 by Delroy Prithvi (https://codepen.io/delroyprithvi/pen/LYyJROR)
-... (licença) ...
-*/
 .shootingstar {
   position: absolute;
   width: 4px;

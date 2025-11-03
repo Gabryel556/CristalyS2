@@ -1,17 +1,13 @@
-// Aguarda o carregamento completo do HTML
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA PARA TROCA DE TEMA ---
     const themeToggleButton = document.getElementById('theme-toggle');
     const body = document.body;
 
     const applySavedTheme = () => {
-        // Define 'dark' como padrão se nenhum tema estiver salvo
         const savedTheme = localStorage.getItem('theme') || 'dark'; 
         if (savedTheme === 'light') {
             body.classList.add('light-theme');
         }
-        // REMOVIDO: Chamada para loadParticles(savedTheme);
     };
 
     const toggleTheme = () => {
@@ -23,14 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         localStorage.setItem('theme', currentTheme);
         
-        // REMOVIDO: Chamada para loadParticles(currentTheme);
     };
 
     themeToggleButton.addEventListener('click', toggleTheme);
-    // Aplica o tema salvo (sem partículas)
     applySavedTheme();
 
-    // --- LÓGICA PARA NAVEGAÇÃO ENTRE ABAS (continua igual) ---
     const navLinks = document.querySelectorAll('.nav-links a');
     const contentSections = document.querySelectorAll('.content-section');
 
